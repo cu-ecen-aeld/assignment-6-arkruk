@@ -1,0 +1,18 @@
+index c72da93..b90d14f 100644
+--- a/server/Makefile
++++ b/server/Makefile
+@@ -2,10 +2,10 @@ all: aesdsocket
+ default: aesdsocket
+ 
+ aesdsocket.o: aesdsocket.c
+-       $(CC) -pthread -lrt -Wall -c aesdsocket.c
++       $(CC) $(CCFLAGS) -c aesdsocket.c
+ 
+ aesdsocket: aesdsocket.o
+-       $(CC) aesdsocket.o -pthread -lrt -Wall -o aesdsocket
++       $(CC) $(LDFLAGS) aesdsocket.o -o aesdsocket
+ 
+ clean :
+-       rm -f aesdsocket.o aesdsocket
+\ No newline at end of file
++       rm -f aesdsocket.o aesdsocket
